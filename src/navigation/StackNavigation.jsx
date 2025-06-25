@@ -2,16 +2,58 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from '../screens/auth/Login';
-import Dashboard from '../screens/dashboard';
+import Dashboard from '../screens/Dashboard';
+import Home from '../screens/Home';
+import SignUp from '../screens/auth/SignUp';
+import EmailVerification from '../screens/auth/EmailVerification';
+import UpdateEmail from '../screens/auth/UpdateEmail';
+import QuizScreen from '../screens/QuizScreen';
+import QuizApprovedScreen from '../screens/QuizScreen/QuizApprovedScreen';
+import QuizCompleteScreen from '../screens/QuizScreen/QuizCompleteScreen';
+// import Dashboard from '../screens/dashboard';
 
 const StackNavigation = () => {
     const Stack = createNativeStackNavigator();
     return (
-        <Stack.Navigator initialRouteName="Login">
-            
+        <Stack.Navigator initialRouteName="Home">
+            <Stack.Screen
+                name="Home"
+                component={Home}
+                options={{ headerShown: false }}
+            />
             <Stack.Screen
                 name="Login"
                 component={Login}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="SignUp"
+                component={SignUp}
+                options={{ headerShown: false }}
+            />
+              <Stack.Screen
+                name="EmailVerification"
+                component={EmailVerification}
+                options={{ headerShown: false }}
+            />
+              <Stack.Screen
+                name="UpdateEmail"
+                component={UpdateEmail}
+                options={{ headerShown: false }}
+            />
+               <Stack.Screen
+                name="QuizScreen"
+                component={QuizScreen}
+                options={{ headerShown: false }}
+            />
+              <Stack.Screen
+                name="QuizApprovedScreen"
+                component={QuizApprovedScreen}
+                options={{ headerShown: false }}
+            />
+              <Stack.Screen
+                name="QuizCompleteScreen"
+                component={QuizCompleteScreen}
                 options={{ headerShown: false }}
             />
             <Stack.Screen

@@ -9,10 +9,14 @@
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import StackNavigation from './src/navigation/StackNavigation';
 import { NavigationContainer } from '@react-navigation/native';
+import SplashScreen from 'react-native-splash-screen';
+import { useEffect } from 'react';
 
 function App() {
 
-
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
     <>
       <NavigationContainer>
