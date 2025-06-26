@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
-
+import colors from '../../utils/colors';
 const { width } = Dimensions.get('window');
 
 const QuizApprovedScreen = ({ navigation }) => {
@@ -46,18 +46,20 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   description: {
-    fontSize: width * 0.045,
+    fontSize: width * 0.043,
     textAlign: 'center',
     color: '#555',
     marginBottom: 40,
     lineHeight: 22,
   },
   continueButton: {
-    backgroundColor: '#2C1478',
-    paddingVertical: 14,
-    paddingHorizontal: 60,
+    // backgroundColor: '#2C1478',
+    backgroundColor: colors.primary,
+    paddingVertical: 16,
+    paddingHorizontal: 120, 
     borderRadius: 10,
-    marginBottom: 30,
+    marginBottom: 140,
+    
   },
   continueButtonText: {
     fontSize: 16,
@@ -84,7 +86,7 @@ const styles = StyleSheet.create({
   approvedButton: {
     backgroundColor: '#2ECC71',
     paddingVertical: 12,
-    paddingHorizontal: 50,
+    paddingHorizontal: 80,
     borderRadius: 10,
   },
   approvedText: {

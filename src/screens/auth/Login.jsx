@@ -55,7 +55,7 @@ const Login = () => {
             )}
 
             <TouchableOpacity style={styles.forgotButton}>
-              <Text style={styles.forgotText} onPress={() => Navigation.navigate('EmailVerification')}>Forgot Password?</Text>
+              <Text style={styles.forgotText} onPress={() => Navigation.navigate('EnterEmail')}>Forgot Password?</Text>
             </TouchableOpacity>
 
             <PrimaryButton title="Login" onPress={handleSubmit} />

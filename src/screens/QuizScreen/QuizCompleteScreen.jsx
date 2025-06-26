@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     fontSize: width * 0.041,
     textAlign: 'center',
     color: '#555',
-    marginBottom: 50,
+    marginBottom: 230,
     lineHeight: 22,
   },
   statusContainer: {
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   pendingButton: {
     backgroundColor: '#ece4f9',
     paddingVertical: 12,
-    paddingHorizontal: 50,
+    paddingHorizontal: 80,
     borderRadius: 10,
   },
   pendingText: {

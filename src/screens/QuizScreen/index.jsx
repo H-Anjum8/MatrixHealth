@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList, Alert } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import colors from '../../utils/colors';
 
 const quizData = [
   {
@@ -123,21 +124,27 @@ const styles = StyleSheet.create({
   container: { flex: 1, padding: 20, backgroundColor: '#fff' },
   title: { fontSize: 28, fontWeight: 'bold', marginBottom: 5 },
   subtitle: { fontSize: 14, marginBottom: 20, color: '#666' },
-  stepText: { fontSize: 14, marginBottom: 10, color: '#555', textAlign: 'center' },
+  stepText: { fontSize: 14, marginBottom: 10, color: '#555', textAlign: 'center', },
+ 
+  back: {
+        color: colors.primary,
+
+    },
   backButton: {
-    width: 40,
-    height: 40,
-    backgroundColor: '#ece4f9',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 15,
-    borderRadius: 20,
-  },
+        backgroundColor: colors.secondary,
+        width: 30,
+        borderRadius:6,
+        alignItems:'center',
+        justifyContent:'center',
+        paddingHorizontal:5,
+        paddingVertical:6, 
+      },
   progressContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
+    
   },
   progressStep: {
     width: 30,
@@ -145,6 +152,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#eee',
     borderRadius: 50,
     marginHorizontal: 4,
+    backgroundColor: colors.secondary,
   },
   progressStepActive: {
     backgroundColor: '#5e2ca5',
@@ -160,12 +168,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  optionText: { fontSize: 14, color: '#333' },
+  optionText: { fontSize: 13, color: '#333' },
   selectedOption: {
     backgroundColor: '#ece4f9',
     borderColor: '#5e2ca5',
   },
-  selectedText: { fontSize: 15, color: '#5e2ca5' },
+  selectedText: { fontSize: 14, color: '#5e2ca5' },
   radioCircle: {
     height: 22,
     width: 22,
@@ -181,12 +189,13 @@ const styles = StyleSheet.create({
     borderColor: '#5e2ca5',
   },
   nextButton: {
-    backgroundColor: '#2C1478',
+    // backgroundColor: '#2C1478',
+    backgroundColor: colors.primary,
     padding: 16,
     borderRadius: 12,
     marginTop: 20,
   },
   nextButtonText: { color: '#fff', textAlign: 'center', fontSize: 18 },
-  skipButton: { marginTop: 10, padding: 14 },
+  skipButton: { marginTop: 10, padding: 14,backgroundColor: colors.secondary,borderRadius: 12, },
   skipText: { textAlign: 'center', color: '#5e2ca5' },
 });

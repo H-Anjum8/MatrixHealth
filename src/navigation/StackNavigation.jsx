@@ -10,6 +10,11 @@ import UpdateEmail from '../screens/auth/UpdateEmail';
 import QuizScreen from '../screens/QuizScreen';
 import QuizApprovedScreen from '../screens/QuizScreen/QuizApprovedScreen';
 import QuizCompleteScreen from '../screens/QuizScreen/QuizCompleteScreen';
+import Avatar from '../screens/Avatar';
+import AvatarCustomization from '../screens/Avatar/AvatarCustomization';
+import FocusWellness from '../screens/FocusWellness';
+import EnterEmail from '../screens/auth/EnterEmail';
+import ChangePassword from '../screens/auth/ChangePassword';
 // import Dashboard from '../screens/dashboard';
 
 const StackNavigation = () => {
@@ -31,27 +36,54 @@ const StackNavigation = () => {
                 component={SignUp}
                 options={{ headerShown: false }}
             />
-              <Stack.Screen
+            <Stack.Screen
+                name="EnterEmail"
+                component={EnterEmail}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
                 name="EmailVerification"
                 component={EmailVerification}
                 options={{ headerShown: false }}
             />
-              <Stack.Screen
+            <Stack.Screen
+                name="ChangePassword"
+                component={ChangePassword}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
                 name="UpdateEmail"
                 component={UpdateEmail}
                 options={{ headerShown: false }}
             />
-               <Stack.Screen
+            
+            <Stack.Screen
+                name="Avatar"
+                component={Avatar}
+                options={{ headerShown: false }}
+            />
+            {/* <Stack.Screen
+                name="AvatarCustomization"
+                component={AvatarCustomization}
+                options={{ headerShown: false }}
+            /> */}
+            <Stack.Screen
+                name="FocusWellness"
+                component={FocusWellness}
+                options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
                 name="QuizScreen"
                 component={QuizScreen}
                 options={{ headerShown: false }}
             />
-              <Stack.Screen
+            <Stack.Screen
                 name="QuizApprovedScreen"
                 component={QuizApprovedScreen}
                 options={{ headerShown: false }}
             />
-              <Stack.Screen
+            <Stack.Screen
                 name="QuizCompleteScreen"
                 component={QuizCompleteScreen}
                 options={{ headerShown: false }}
