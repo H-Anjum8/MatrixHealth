@@ -38,7 +38,7 @@ const SignUp = () => {
         validationSchema={SignupSchema}
         onSubmit={(values) => {
           console.log('Signing up with:', values);
-          Navigation.navigate('EmailVerification');
+          Navigation.navigate('Avatar');
         }}
       >
         {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (

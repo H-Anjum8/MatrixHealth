@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 const { width } = Dimensions.get('window');
 
-const QuizCompleteScreen = ({ navigation }) => {
+const QuizCompleteScreen = ({  }) => {
+  const Navigation =useNavigation()
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Thanks For{"\n"}Completing The Quiz!</Text>
@@ -19,7 +21,7 @@ const QuizCompleteScreen = ({ navigation }) => {
         <Text style={styles.statusText}>Status</Text>
       </View>
 
-      <TouchableOpacity style={styles.pendingButton}>
+      <TouchableOpacity style={styles.pendingButton} onPress={() => Navigation.navigate('QuizApprovedScreen')}>
         <Text style={styles.pendingText}>Pending</Text>
       </TouchableOpacity>
     </View>

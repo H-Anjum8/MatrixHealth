@@ -27,13 +27,14 @@ const EmailVerification = ({ route }) => {
     };
 
     const submit = () => {
-        fetch('https://your.api/verify-code', {
-            method: 'POST',
-            body: JSON.stringify({ email, code }),
-            headers: { 'Content-Type': 'application/json' }
-        })
-            .then(res => res.ok ? navigation.replace('SuccessScreen') : Promise.reject())
-            .catch(() => Alert.alert('Error', 'Invalid or expired code'));
+        Navigation.navigate('ChangePassword')
+        // fetch('https://your.api/verify-code', {
+        //     method: 'POST',
+        //     body: JSON.stringify({ email, code }),
+        //     headers: { 'Content-Type': 'application/json' }
+        // })
+        //     .then(res => res.ok ? navigation.replace('SuccessScreen') : Promise.reject())
+        //     .catch(() => Alert.alert('Error', 'Invalid or expired code'));
     };
     return (
         <View style={styles.container}>

@@ -5,11 +5,13 @@ import * as Yup from 'yup';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import colors from '../../utils/colors';
 import CustomTextInput from '../../components/CommonComp/CustomTextInput';
+import { useNavigation } from '@react-navigation/native';
 const EmailUpdateSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is required'),
 });
 
 const UpdateEmail = () => {
+    const Navigation = useNavigation()
   
 
     return (
@@ -26,7 +28,7 @@ const UpdateEmail = () => {
                 validationSchema={EmailUpdateSchema}
                 onSubmit={(values) => {
                     console.log('Form Data:', values);
-                    // Navigation.navigate('EmailVerification');
+                    Navigation.navigate('Avatar');
                 }}
 
             >

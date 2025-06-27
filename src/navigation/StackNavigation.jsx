@@ -15,6 +15,10 @@ import AvatarCustomization from '../screens/Avatar/AvatarCustomization';
 import FocusWellness from '../screens/FocusWellness';
 import EnterEmail from '../screens/auth/EnterEmail';
 import ChangePassword from '../screens/auth/ChangePassword';
+import WellnessScreen from '../screens/WellnessScreen';
+import StepOne from '../screens/Appointment/StepOne';
+import StepTwo from '../screens/Appointment/StepTwo';
+import StepThree from '../screens/Appointment/StepThree'
 // import Dashboard from '../screens/dashboard';
 
 const StackNavigation = () => {
@@ -62,11 +66,11 @@ const StackNavigation = () => {
                 component={Avatar}
                 options={{ headerShown: false }}
             />
-            {/* <Stack.Screen
+            <Stack.Screen
                 name="AvatarCustomization"
                 component={AvatarCustomization}
                 options={{ headerShown: false }}
-            /> */}
+            />
             <Stack.Screen
                 name="FocusWellness"
                 component={FocusWellness}
@@ -88,11 +92,33 @@ const StackNavigation = () => {
                 component={QuizCompleteScreen}
                 options={{ headerShown: false }}
             />
+              <Stack.Screen
+                name="WellnessScreen"
+                component={WellnessScreen}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="StepOne"
+                component={StepOne}
+                options={{ headerShown: false }}
+            />
+              <Stack.Screen
+                name="StepTwo"
+                component={StepTwo}
+                options={{ headerShown: false }}
+            />
+               <Stack.Screen
+                name="StepThree"
+                component={StepThree}
+                options={{ headerShown: false }}
+            />
             <Stack.Screen
                 name="Dashboard"
                 component={Dashboard}
                 options={{ headerShown: false }}
             />
+
+            
         </Stack.Navigator>
     )
 }

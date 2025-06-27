@@ -2,6 +2,7 @@ export default {
     HomeImg: require('../assets/images/Home.png'),
     Logo: require('../assets/images/Logo.png'),
     Avatar: require('../assets/images/Avatar.png'),
+    wellness:require('../assets/images/wellness.png')
     // Slim: require('./assets/images/avatar_parts/body_slim.png'),
     // Average: require('./assets/images/avatar_parts/body_average.png'),
     // Curvy: require('./assets/images/avatar_parts/body_curvy.png'),

@@ -1,9 +1,12 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import colors from '../../utils/colors';
+import { useNavigation } from '@react-navigation/native';
+
 const { width } = Dimensions.get('window');
 
-const QuizApprovedScreen = ({ navigation }) => {
+const QuizApprovedScreen = ({  }) => {
+     const Navigation = useNavigation()
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Thanks For{"\n"}Completing The Quiz!</Text>
@@ -12,7 +15,7 @@ const QuizApprovedScreen = ({ navigation }) => {
         Your responses have been submitted. An admin will review your survey form, and upon approval, you’ll receive access to the app.
       </Text>
 
-      <TouchableOpacity style={styles.continueButton}>
+      <TouchableOpacity style={styles.continueButton} onPress={() => Navigation.navigate('WellnessScreen')}> 
         <Text style={styles.continueButtonText}>Continue</Text>
       </TouchableOpacity>
 
@@ -53,10 +56,10 @@ const styles = StyleSheet.create({
     lineHeight: 22,
   },
   continueButton: {
-    // backgroundColor: '#2C1478',
+  
     backgroundColor: colors.primary,
     paddingVertical: 16,
-    paddingHorizontal: 120, 
+    paddingHorizontal: 110, 
     borderRadius: 10,
     marginBottom: 140,
     

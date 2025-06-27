@@ -63,7 +63,7 @@ const FocusWellness = () => {
             </ScrollView>
 
             {/* Continue Button */}
-            <TouchableOpacity style={styles.continueButton}>
+            <TouchableOpacity style={styles.continueButton}  onPress={() => Navigation.navigate('QuizScreen')}>
                 <Text style={styles.continueButtonText}>Continue</Text>
             </TouchableOpacity>
         </View>

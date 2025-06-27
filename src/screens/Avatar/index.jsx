@@ -18,7 +18,7 @@ const Avatar = ({ navigation }) => {
   const [gender, setGender] = useState('Male');
 
   const handleCustomize = () => {
-
+    Navigation.navigate('AvatarCustomization')
     // Implement customize logic here
     console.log('Avatar Name:', avatarName);
     console.log('Gender:', gender);
@@ -72,14 +72,14 @@ const Avatar = ({ navigation }) => {
 
       {/* Customize Button */}
       <TouchableOpacity style={styles.customizeButton} onPress={handleCustomize}>
-        <Text style={styles.customizeText } onPress={()=>Navigation.navigate('AvatarCustomization')}>Customize</Text>
+        <Text style={styles.customizeText}>Customize</Text>
       </TouchableOpacity>
 
       {/* Login Text */}
       <Text style={styles.loginText}>
         Already have an account?{' '}
-        <Text style={styles.loginLink} >
-          {/* onPress={() => navigation.navigate('Login')} */}
+        <Text style={styles.loginLink} onPress={() => navigation.navigate('Login')} >
+
           Login
         </Text>
       </Text>
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   customizeButton: {
-    backgroundColor: '#4B0082',
+    backgroundColor: colors.primary,
     paddingVertical: 14,
     borderRadius: 8,
     alignItems: 'center',
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   },
   back: {
     color: colors.primary,
-  
+
 
   },
   backButton: {
@@ -189,8 +189,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 5,
     paddingVertical: 6,
-      marginTop:20,
-      marginBottom:6
+    marginTop: 20,
+    marginBottom: 6
 
   }
+
 });

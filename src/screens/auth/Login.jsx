@@ -28,7 +28,7 @@ const Login = () => {
         validationSchema={LoginSchema}
         onSubmit={(values) => {
           console.log('Logging in with:', values);
-          Navigation.navigate('Home')
+          Navigation.navigate('Avatar')
         }}
       >
         {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
