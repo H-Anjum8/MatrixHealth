@@ -2,8 +2,10 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import imagePath from '../../constant/imagePath';
+import { useNavigation } from '@react-navigation/native';
 
 export default function CustomDrawerContent() {
+  const Navigation = useNavigation();
   return (
     <View style={styles.container}>
       {/* Profile Info */}
@@ -11,33 +13,41 @@ export default function CustomDrawerContent() {
         <Image source={imagePath.user} style={styles.avatar} />
         <Text style={styles.name}>Donald Jeffery</Text>
         <Text style={styles.email}>donaldjeffery123@gmail.com</Text>
-      </View>
+        {/* Menu Items */}
+        <View style={styles.menuSection}>
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={() => Navigation.navigate('BookConsultation')}
+          >
+            <Ionicons
+              name="calendar-outline"
+              size={20}
+              color="#000"
+              style={styles.icon}
+            />
+            <Text style={styles.menuText}>Book Consultation</Text>
+          </TouchableOpacity>
 
-      {/* Menu Items */}
-      <View style={styles.menuSection}>
-        <TouchableOpacity style={styles.menuItem}>
-          <Ionicons
-            name="calendar-outline"
-            size={20}
-            color="#000"
-            style={styles.icon}
-          />
-          <Text style={styles.menuText}>Book Consultation</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.menuItem}>
-          <Ionicons
-            name="clipboard-outline"
-            size={20}
-            color="#000"
-            style={styles.icon}
-          />
-          <Text style={styles.menuText}>My Appointments</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={() => Navigation.navigate('ClientAppointments')}
+          >
+            <Ionicons
+              name="clipboard-outline"
+              size={20}
+              color="#000"
+              style={styles.icon}
+            />
+            <Text style={styles.menuText}>My Appointments</Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       {/* Logout Button */}
-      <TouchableOpacity style={styles.logout}>
+      <TouchableOpacity
+        style={styles.logout}
+        onPress={() => Navigation.navigate('Home')}
+      >
         <Ionicons
           name="log-out-outline"
           size={20}

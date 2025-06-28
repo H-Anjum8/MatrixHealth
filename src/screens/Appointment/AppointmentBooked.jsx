@@ -12,21 +12,21 @@ const AppointmentBooked = ({ navigation }) => {
 
       {/* Subtext */}
       <Text style={styles.subText}>
-        Your appointment has been successfully scheduled. 
-        We look forward to serving you!
+        Your appointment has been successfully scheduled. We look forward to
+        serving you!
       </Text>
 
       {/* Action Buttons */}
-      <TouchableOpacity 
+      <TouchableOpacity
         style={styles.primaryButton}
         onPress={() => navigation.navigate('Appointments')}
       >
         <Text style={styles.buttonText}>View Appointments</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity 
+      <TouchableOpacity
         style={styles.secondaryButton}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('DashBoardNavigator')}
       >
         <Text style={styles.secondaryButtonText}>Go to Home</Text>
       </TouchableOpacity>
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.secondary,
   },
   secondaryButtonText: {
-    color:  colors.primary,
+    color: colors.primary,
     fontSize: moderateScale(16),
     fontWeight: '600',
     textAlign: 'center',

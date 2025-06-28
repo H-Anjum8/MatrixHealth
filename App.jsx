@@ -17,7 +17,7 @@ function App() {
     SplashScreen.hide();
   }, []);
 
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <>
       <NavigationContainer>

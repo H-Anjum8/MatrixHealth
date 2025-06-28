@@ -1,12 +1,11 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Dashboard from '../screens/Dashboard';
-import { Text } from 'react-native';
-import Settings from '../screens/Dashboard/Settings';
 import Challenges from '../screens/Dashboard/Challenges';
 import Messages from '../screens/Dashboard/Messages';
 import Learn from '../screens/Dashboard/Learn';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import SettingsScreen from '../screens/Dashboard/SettingsScreens';
 
 const Tab = createBottomTabNavigator();
 
@@ -30,7 +29,7 @@ export default function BottomTabs() {
             case 'Learn':
               iconName = focused ? 'book' : 'book-outline';
               break;
-            case 'Settings':
+            case 'SettingsScreen':
               iconName = focused ? 'settings' : 'settings-outline';
               break;
           }
@@ -44,7 +43,11 @@ export default function BottomTabs() {
       <Tab.Screen name="Challenges" component={Challenges} />
       <Tab.Screen name="Messages" component={Messages} />
       <Tab.Screen name="Learn" component={Learn} />
-      <Tab.Screen name="Settings" component={Settings} />
+      <Tab.Screen
+        name="SettingsScreen"
+        component={SettingsScreen}
+        options={{ headerShown: false }}
+      />
     </Tab.Navigator>
   );
 }

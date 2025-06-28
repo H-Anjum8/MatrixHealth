@@ -4,6 +4,7 @@ export default {
   Avatar: require('../assets/images/Avatar.png'),
   wellness: require('../assets/images/wellness.png'),
   user: require('../assets/images/dashboard/user.png'),
+  clientavatar: require('../assets/images/clientavatar.jpeg'),
 
   // Slim: require('./assets/images/avatar_parts/body_slim.png'),
   // Average: require('./assets/images/avatar_parts/body_average.png'),

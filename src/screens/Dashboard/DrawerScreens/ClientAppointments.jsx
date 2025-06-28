@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
-const Settings = () => {
+const ClientAppointments = () => {
   return (
     <View>
-      <Text>Settings</Text>
+      <Text>ClientAppointments</Text>
     </View>
   );
 };
 
-export default Settings;
+export default ClientAppointments;
 
 const styles = StyleSheet.create({});

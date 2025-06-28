@@ -1,37 +1,50 @@
-
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  ActivityIndicator,
+} from 'react-native';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import CustomTextInput from '../../components/CommonComp/CustomTextInput';
 import PrimaryButton from '../../components/CommonComp/PrimaryButton';
 import { useNavigation } from '@react-navigation/native';
 
-
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Email required'),
-  password: Yup.string().min(6, 'Minimum 6 characters').required('Password required'),
+  password: Yup.string()
+    .min(6, 'Minimum 6 characters')
+    .required('Password required'),
 });
 
 const Login = () => {
   const Navigation = useNavigation();
 
-
   return (
     <View style={styles.container}>
-    
       <Text style={styles.heading}>Welcome Back!</Text>
-      <Text style={styles.subheading}>Log in to continue your healing journey.</Text>
+      <Text style={styles.subheading}>
+        Log in to continue your healing journey.
+      </Text>
 
       <Formik
         initialValues={{ email: '', password: '' }}
         validationSchema={LoginSchema}
-        onSubmit={(values) => {
+        onSubmit={values => {
           console.log('Logging in with:', values);
-          Navigation.navigate('Avatar')
+          Navigation.navigate('DashBoardNavigator');
         }}
       >
-        {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
+        {({
+          handleChange,
+          handleBlur,
+          handleSubmit,
+          values,
+          errors,
+          touched,
+        }) => (
           <>
             <CustomTextInput
               placeholder="Enter Your Email Address"
@@ -55,7 +68,12 @@ const Login = () => {
             )}
 
             <TouchableOpacity style={styles.forgotButton}>
-              <Text style={styles.forgotText} onPress={() => Navigation.navigate('EnterEmail')}>Forgot Password?</Text>
+              <Text
+                style={styles.forgotText}
+                onPress={() => Navigation.navigate('EnterEmail')}
+              >
+                Forgot Password?
+              </Text>
             </TouchableOpacity>
 
             <PrimaryButton title="Login" onPress={handleSubmit} />
@@ -64,16 +82,11 @@ const Login = () => {
       </Formik>
 
       <View style={styles.signupContainer}>
-        <Text style={styles.footerText}>
-          Don’t have an account?
-
-        </Text>
+        <Text style={styles.footerText}>Don’t have an account?</Text>
         <TouchableOpacity onPress={() => Navigation.navigate('SignUp')}>
           <Text style={styles.signupText}> Sign Up</Text>
         </TouchableOpacity>
       </View>
-
-
     </View>
   );
 };
@@ -113,7 +126,6 @@ const styles = StyleSheet.create({
   footerText: {
     textAlign: 'center',
 
-
     fontSize: 13,
     fontFamily: 'Poppins_400Regular',
     color: '#000',
@@ -121,8 +133,6 @@ const styles = StyleSheet.create({
   signupText: {
     color: '#7E48E2',
     fontFamily: 'Poppins_600SemiBold',
-
-
   },
   errorText: {
     color: 'red',
@@ -135,8 +145,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20,
-
-  }
+  },
 });
 
 export default Login;
