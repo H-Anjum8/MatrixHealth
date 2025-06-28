@@ -5,50 +5,41 @@
  * @format
  */
 
-
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import StackNavigation from './src/navigation/StackNavigation';
 import { NavigationContainer } from '@react-navigation/native';
 import SplashScreen from 'react-native-splash-screen';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import DashBoardNavigator from './src/navigation/DashBoardNavigator';
 
 function App() {
-
   useEffect(() => {
     SplashScreen.hide();
   }, []);
+
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   return (
     <>
       <NavigationContainer>
         {/* Fake background color for status bar area on Android */}
-        {Platform.OS === 'android' && (
-          <View style={styles.statusBarAndroid} />
-        )}
+        {Platform.OS === 'android' && <View style={styles.statusBarAndroid} />}
 
         {/* Fake background for iOS notch area */}
-        {Platform.OS === 'ios' && (
-          <View style={styles.statusBarIOS} />
-        )}
+        {Platform.OS === 'ios' && <View style={styles.statusBarIOS} />}
 
         <StatusBar
           translucent
           backgroundColor="gray"
           barStyle="light-content"
         />
-
-        <StackNavigation />
+        {isLoggedIn ? <DashBoardNavigator /> : <StackNavigation />}
       </NavigationContainer>
-
     </>
   );
 }
 
-
-
 export default App;
 const styles = StyleSheet.create({
-
-
   statusBarAndroid: {
     height: StatusBar.currentHeight,
     backgroundColor: 'gray',
@@ -64,4 +55,4 @@ const styles = StyleSheet.create({
   scrollContent: {
     paddingBottom: 20,
   },
-})
+});
