@@ -57,12 +57,12 @@ const SettingsScreen = ({ navigation }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       {/* Header */}
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.openDrawer()}>
           <Ionicons name="menu" size={moderateScale(24)} color="#000" />
         </TouchableOpacity>
         <Text style={styles.heading}>Settings</Text>
-      </View>
+      </View> */}
 
       {/* Avatar */}
       <Image

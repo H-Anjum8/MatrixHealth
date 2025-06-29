@@ -32,6 +32,12 @@ import DataDownloadScreen from '../screens/Dashboard/SettingsScreens/DataDownloa
 import TermsScreen from '../screens/Dashboard/SettingsScreens/TermsScreen';
 import BookConsultation from '../screens/Dashboard/DrawerScreens/BookConsultation';
 import ClientAppointments from '../screens/Dashboard/DrawerScreens/ClientAppointments';
+import MessagesScreen from '../screens/Dashboard/MessagesScreen.jsx';
+import ChatScreen from '../screens/Dashboard/MessagesScreen.jsx/ChatScreen.jsx';
+import ArticleDetailScreen from '../screens/Dashboard/LearnScreen/ArticleDetailScreen.jsx';
+import LearnScreen from '../screens/Dashboard/LearnScreen/index.jsx';
+import StressLibraryScreen from '../screens/Dashboard/LearnScreen/StressLibraryScreen.jsx';
+import VideoPlaceholderScreen from '../screens/Dashboard/LearnScreen/VideoPlaceholderScreen.jsx';
 // import Dashboard from '../screens/dashboard';
 
 const StackNavigation = () => {
@@ -192,6 +198,37 @@ const StackNavigation = () => {
       <Stack.Screen
         name="ClientAppointments"
         component={ClientAppointments}
+        options={{ headerShown: false }}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="MessagesScreen"
+        component={MessagesScreen}
+        options={{ headerShown: false }}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="ChatScreen"
+        component={ChatScreen}
+        options={{ headerShown: false }}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="LearnScreen"
+        component={LearnScreen}
+        options={{ headerShown: false }}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="ArticleDetailScreen"
+        component={ArticleDetailScreen}
+        options={{ headerShown: false }}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="StressLibraryScreen"
+        component={StressLibraryScreen}
+        options={{ headerShown: false }}
+      ></Stack.Screen>
+
+      <Stack.Screen
+        name="VideoPlaceholderScreen"
+        component={VideoPlaceholderScreen}
         options={{ headerShown: false }}
       ></Stack.Screen>
     </Stack.Navigator>

@@ -4,7 +4,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { View, Text, Image } from 'react-native';
 import BottomTabs from './BottomTabs';
 import CustomDrawerContent from '../components/Dashboard/CustomDrawerContent';
-import Login from '../screens/auth/Login';
 
 const Drawer = createDrawerNavigator();
 
@@ -14,12 +13,10 @@ export default function DashBoardNavigator() {
       <Drawer.Screen
         name="HomeTabs"
         component={BottomTabs}
-        // options={{ headerShown: false }}
-      />
-      <Drawer.Screen
-        name="Login"
-        component={Login}
-        // options={{ headerShown: false }}
+        options={{
+          headerShown: true, // ✅ Show header
+          title: '',
+        }}
       />
     </Drawer.Navigator>
   );

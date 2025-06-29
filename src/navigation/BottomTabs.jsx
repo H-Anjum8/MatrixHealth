@@ -2,10 +2,10 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Dashboard from '../screens/Dashboard';
 import Challenges from '../screens/Dashboard/Challenges';
-import Messages from '../screens/Dashboard/Messages';
-import Learn from '../screens/Dashboard/Learn';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import SettingsScreen from '../screens/Dashboard/SettingsScreens';
+import MessagesScreen from '../screens/Dashboard/MessagesScreen.jsx';
+import StressLibraryScreen from '../screens/Dashboard/LearnScreen/StressLibraryScreen.jsx';
 
 const Tab = createBottomTabNavigator();
 
@@ -26,7 +26,7 @@ export default function BottomTabs() {
             case 'Messages':
               iconName = focused ? 'chatbubble' : 'chatbubble-outline';
               break;
-            case 'Learn':
+            case 'StressLibraryScreen':
               iconName = focused ? 'book' : 'book-outline';
               break;
             case 'SettingsScreen':
@@ -41,12 +41,12 @@ export default function BottomTabs() {
     >
       <Tab.Screen name="Home" component={Dashboard} />
       <Tab.Screen name="Challenges" component={Challenges} />
-      <Tab.Screen name="Messages" component={Messages} />
-      <Tab.Screen name="Learn" component={Learn} />
+      <Tab.Screen name="Messages" component={MessagesScreen} />
+      <Tab.Screen name="StressLibraryScreen" component={StressLibraryScreen} />
       <Tab.Screen
         name="SettingsScreen"
         component={SettingsScreen}
-        options={{ headerShown: false }}
+        // options={{ headerShown: false }}
       />
     </Tab.Navigator>
   );
