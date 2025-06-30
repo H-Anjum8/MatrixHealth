@@ -38,6 +38,8 @@ import ArticleDetailScreen from '../screens/Dashboard/LearnScreen/ArticleDetailS
 import LearnScreen from '../screens/Dashboard/LearnScreen/index.jsx';
 import StressLibraryScreen from '../screens/Dashboard/LearnScreen/StressLibraryScreen.jsx';
 import VideoPlaceholderScreen from '../screens/Dashboard/LearnScreen/VideoPlaceholderScreen.jsx';
+import ChallengesLeaderboardScreen from '../screens/Dashboard/ChallengesScreen/ChallengesLeaderboardScreen.jsx';
+// import ChallengesScreen from '../screens/Dashboard/ChallengesScreen/index.jsx';
 // import Dashboard from '../screens/dashboard';
 
 const StackNavigation = () => {
@@ -225,10 +227,14 @@ const StackNavigation = () => {
         component={StressLibraryScreen}
         options={{ headerShown: false }}
       ></Stack.Screen>
-
       <Stack.Screen
         name="VideoPlaceholderScreen"
         component={VideoPlaceholderScreen}
+        options={{ headerShown: false }}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="ChallengesLeaderboardScreen"
+        component={ChallengesLeaderboardScreen}
         options={{ headerShown: false }}
       ></Stack.Screen>
     </Stack.Navigator>

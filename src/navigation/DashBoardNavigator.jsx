@@ -1,7 +1,5 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-
-import { View, Text, Image } from 'react-native';
 import BottomTabs from './BottomTabs';
 import CustomDrawerContent from '../components/Dashboard/CustomDrawerContent';
 
@@ -14,8 +12,7 @@ export default function DashBoardNavigator() {
         name="HomeTabs"
         component={BottomTabs}
         options={{
-          headerShown: true, // ✅ Show header
-          title: '',
+          headerShown: false, // ✅ hide header here to prevent double header
         }}
       />
     </Drawer.Navigator>
