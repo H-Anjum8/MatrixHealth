@@ -4,4 +4,5 @@ export default {
   link: '#7E48E2',
   white: '#ffffff',
   sky: '#1B9ADB',
+  black: 'black',
 };

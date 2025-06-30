@@ -1,139 +1,137 @@
 import React from 'react';
 import {
   View,
-  Text,
   Image,
   StyleSheet,
-  FlatList,
-  TouchableOpacity,
   Dimensions,
+  TouchableOpacity,
 } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import imagePath from '../../../constant/imagePath';
 
-const { width } = Dimensions.get('window');
-
-const dummyData = [
-  {
-    id: '1',
-    title: '5-Minute Breathing Exercise for Stress Relief',
-    tag: 'Stress',
-    image: imagePath.excercise,
-    action: 'Watch Now',
-  },
-  {
-    id: '2',
-    title: 'How Sleep Impacts Mood and Energy',
-    tag: 'Sleep',
-    image: imagePath.sleepmood,
-    action: 'Start Reading',
-  },
-  {
-    id: '3',
-    title: '5-Minute Breathing Exercise for Stress Relief',
-    tag: 'Stress',
-    image: imagePath.excercise,
-    action: 'Watch Now',
-  },
-  {
-    id: '4',
-    title: 'How Sleep Impacts Mood and Energy',
-    tag: 'Sleep',
-    image: imagePath.sleepmood,
-    action: 'Start Reading',
-  },
-];
-
-const Card = ({ item }) => (
-  <View style={styles.card}>
-    <Image source={item.image} style={styles.image} />
-    <Text style={styles.title} numberOfLines={2}>
-      {item.title}
-    </Text>
-    <View style={styles.tagContainer}>
-      <Text style={styles.tag}>{item.tag}</Text>
-    </View>
-    <View style={{ flex: 1 }} />
-    <TouchableOpacity style={styles.button}>
-      <Text style={styles.buttonText}>{item.action}</Text>
-    </TouchableOpacity>
-  </View>
-);
-
-const StressLibraryScreen = () => {
+const VideoPlaceholderScreen = () => {
   return (
     <View style={styles.container}>
-      <FlatList
-        data={dummyData}
-        renderItem={({ item }) => <Card item={item} />}
-        keyExtractor={item => item.id}
-        numColumns={2}
-        columnWrapperStyle={styles.row}
-        contentContainerStyle={{ padding: 16 }}
+      {/* Top Icons */}
+      <View style={styles.topIcons}>
+        <TouchableOpacity>
+          <Ionicons name="close" size={24} color="#fff" />
+        </TouchableOpacity>
+        <View style={styles.topRightIcons}>
+          <MaterialIcons
+            name="cast"
+            size={24}
+            color="#fff"
+            style={styles.icon}
+          />
+          <Ionicons name="volume-high-outline" size={24} color="#fff" />
+        </View>
+      </View>
+
+      {/* Image Placeholder */}
+      <Image
+        source={imagePath.excercise}
+        style={styles.image}
+        resizeMode="contain"
       />
+
+      {/* Play/Pause & Skip Buttons */}
+      <View style={styles.centerControls}>
+        <TouchableOpacity>
+          <Ionicons name="play-back" size={36} color="#fff" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Ionicons
+            name="pause-circle"
+            size={60}
+            color="#fff"
+            style={styles.pause}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Ionicons name="play-forward" size={36} color="#fff" />
+        </TouchableOpacity>
+      </View>
+
+      {/* Progress Bar */}
+      <View style={styles.progressBar}>
+        <View style={styles.progressTime}>
+          <Ionicons name="ellipse" size={6} color="#fff" />
+          <View style={styles.trackLine} />
+          <Ionicons name="ellipse-outline" size={6} color="#fff" />
+        </View>
+        <View style={styles.timeLabels}>
+          <Ionicons name="time-outline" size={14} color="#ccc" />
+          <Ionicons name="time-outline" size={14} color="#ccc" />
+        </View>
+      </View>
     </View>
   );
 };
 
-export default StressLibraryScreen;
+export default VideoPlaceholderScreen;
 
-const CARD_WIDTH = (width - 48) / 2; // 16 + 16 + 16 spacing
+const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F6FA',
-  },
-  row: {
-    justifyContent: 'space-between',
-    marginBottom: 16,
-  },
-  card: {
-    width: CARD_WIDTH,
-    minHeight: 260,
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    padding: 10,
-    shadowColor: '#000',
-    shadowOpacity: 0.08,
-    shadowOffset: { width: 0, height: 2 },
-    elevation: 2,
-    flexDirection: 'column',
+    backgroundColor: '#000',
   },
   image: {
-    width: '100%',
-    height: 100,
-    borderRadius: 10,
-    marginBottom: 8,
+    width: width,
+    height: 650,
+    alignSelf: 'center',
   },
-  title: {
-    fontSize: 13,
-    fontWeight: '600',
-    color: '#111827',
-    marginBottom: 6,
+  topIcons: {
+    position: 'absolute',
+    top: 50,
+    left: 20,
+    right: 20,
+    zIndex: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
-  tagContainer: {
-    backgroundColor: '#E0E7FF',
-    paddingHorizontal: 8,
-    paddingVertical: 2,
-    borderRadius: 12,
-    alignSelf: 'flex-start',
-    marginBottom: 8,
+  topRightIcons: {
+    flexDirection: 'row',
+    gap: 20,
   },
-  tag: {
-    fontSize: 10,
-    color: '#4F46E5',
-    fontWeight: '600',
-  },
-  button: {
-    backgroundColor: '#4F46E5',
-    paddingVertical: 8,
-    borderRadius: 6,
+  centerControls: {
+    position: 'absolute',
+    top: '40%',
+    left: 0,
+    right: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
-    justifyContent: 'center',
   },
-  buttonText: {
-    color: '#fff',
-    fontSize: 12,
-    fontWeight: '600',
+  pause: {
+    marginHorizontal: 16,
+  },
+  progressBar: {
+    position: 'absolute',
+    bottom: 50,
+    left: 20,
+    right: 20,
+    alignItems: 'center',
+  },
+  progressTime: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '100%',
+    justifyContent: 'space-between',
+    marginBottom: 4,
+  },
+  trackLine: {
+    flex: 1,
+    height: 2,
+    backgroundColor: '#fff',
+    marginHorizontal: 10,
+  },
+  timeLabels: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
   },
 });
