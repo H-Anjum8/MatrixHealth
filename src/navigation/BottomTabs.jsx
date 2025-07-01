@@ -15,12 +15,12 @@ export default function BottomTabs() {
   return (
     <Tab.Navigator
       screenOptions={({ route, navigation }) => {
-        const isHome = route.name === 'Home';
+        const isHome = route.name === 'Dashboard';
 
         return {
           tabBarIcon: ({ focused, color }) => {
             const icons = {
-              Home: focused ? 'home' : 'home-outline',
+              Dashboard: focused ? 'home' : 'home-outline',
               Messages: focused ? 'chatbubble' : 'chatbubble-outline',
               Learn: focused ? 'book' : 'book-outline',
               Settings: focused ? 'settings' : 'settings-outline',
