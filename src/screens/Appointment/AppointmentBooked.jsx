@@ -19,7 +19,7 @@ const AppointmentBooked = ({ navigation }) => {
       {/* Action Buttons */}
       <TouchableOpacity
         style={styles.primaryButton}
-        onPress={() => navigation.navigate('Appointments')}
+        onPress={() => navigation.navigate('ClientAppointments')}
       >
         <Text style={styles.buttonText}>View Appointments</Text>
       </TouchableOpacity>

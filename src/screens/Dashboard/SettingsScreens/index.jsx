@@ -51,7 +51,7 @@ const SettingsScreen = ({ navigation }) => {
       icon: 'document-text-outline',
       screen: 'TermsScreen',
     },
-    { title: 'Logout', icon: 'log-out-outline', screen: 'Logout' },
+    { title: 'Logout', icon: 'log-out-outline', screen: 'Home' },
   ];
 
   return (

@@ -9,8 +9,10 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import colors from '../../../utils/colors';
+import { useNavigation } from '@react-navigation/native';
 
 const UpdateProfileScreen = ({}) => {
+  const navigation = useNavigation();
   // Example pre-filled user data
   const [name, setName] = useState('John Doe');
   const [email, setEmail] = useState('johndoe12@gmail.com');

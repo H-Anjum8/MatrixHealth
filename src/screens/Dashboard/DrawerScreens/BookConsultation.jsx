@@ -10,11 +10,12 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import imagePath from '../../../constant/imagePath';
 import colors from '../../../utils/colors';
+import { useNavigation } from '@react-navigation/native';
 
 const BookConsultation = () => {
   const [selectedDate, setSelectedDate] = useState(3);
   const [selectedTime, setSelectedTime] = useState('10:00 AM');
-
+  const navigation = useNavigation();
   const bookedDates = [
     1, 2, 5, 6, 7, 8, 11, 12, 13, 14, 16, 17, 20, 22, 23, 24, 26, 28, 30,
   ]; // 🔹 Add your booked dates here
@@ -36,8 +37,11 @@ const BookConsultation = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       {/* Back Button */}
-      <TouchableOpacity style={styles.backButton}>
-        <Ionicons name="chevron-back" size={20} color={colors.primary} />
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => navigation.goBack()}
+      >
+        <Ionicons name="chevron-back" size={18} color={colors.primary} />
       </TouchableOpacity>
 
       {/* Header */}

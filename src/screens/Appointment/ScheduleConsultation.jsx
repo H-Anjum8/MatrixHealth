@@ -36,8 +36,11 @@ const ScheduleConsultation = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       {/* Back Button */}
-      <TouchableOpacity style={styles.backButton}>
-        <Ionicons name="chevron-back" size={20} color={colors.primary} />
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => Navigation.goBack()}
+      >
+        <Ionicons name="chevron-back" size={18} color={colors.primary} />
       </TouchableOpacity>
 
       {/* Header */}

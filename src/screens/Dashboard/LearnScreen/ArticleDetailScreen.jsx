@@ -22,7 +22,10 @@ const ArticleDetailScreen = () => {
       <Image source={imagePath.sleepmood} style={styles.headerImage} />
 
       {/* Back Button */}
-      <TouchableOpacity style={styles.backBtn}>
+      <TouchableOpacity
+        style={styles.backBtn}
+        onPress={() => navigation.goBack()}
+      >
         <Ionicons name="chevron-back" size={20} color={colors.primary} />
       </TouchableOpacity>
 

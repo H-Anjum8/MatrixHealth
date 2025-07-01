@@ -9,8 +9,10 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import colors from '../../../utils/colors';
+import { useNavigation } from '@react-navigation/native';
 
-const EditProfileScreen = ({ navigation }) => {
+const EditProfileScreen = ({}) => {
+  const navigation = useNavigation();
   const handleEditPress = () => {
     Alert.alert('Submint successfully!');
   };
