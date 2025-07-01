@@ -73,7 +73,7 @@ export default function BottomTabs() {
         };
       }}
     >
-      <Tab.Screen name="dashboard" component={Dashboard} />
+      <Tab.Screen name="Dashboard" component={Dashboard} />
       <Tab.Screen
         name="Messages"
         component={MessagesScreen}
